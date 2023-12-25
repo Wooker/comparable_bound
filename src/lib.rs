@@ -71,7 +71,7 @@ where
                 if start > end {
                     Some(Ordering::Greater)
                 } else if start == end {
-                    Some(Ordering::Equal)
+                    Some(Ordering::Greater)
                 } else {
                     Some(Ordering::Less)
                 }
@@ -80,7 +80,7 @@ where
                 if start < end {
                     Some(Ordering::Less)
                 } else if start == end {
-                    Some(Ordering::Equal)
+                    Some(Ordering::Less)
                 } else {
                     Some(Ordering::Greater)
                 }
@@ -262,6 +262,6 @@ mod tests {
 
         assert_eq!(a, inc![0]);
         assert_eq!(b, exc!(0));
-        assert_eq!(c, unb!(0));
+        assert_eq!(c, unb!());
     }
 }
